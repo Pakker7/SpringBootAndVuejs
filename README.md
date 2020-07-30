@@ -1,6 +1,5 @@
-# license
-* vm 서버 정보
+# Project
+* 이 프로젝트는 SpringBoot 와 vue.js 를 연동하여 만듭니다
 ```
-서버 계정 : root/1
-DB 계정 : test/test
+
 ```
