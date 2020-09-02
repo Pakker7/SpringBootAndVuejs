@@ -1,12 +1,11 @@
-package com.test.psk.board.board;
+package com.test.psk.demo.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
 
     @Autowired
     private BoardDAO boardDAO;

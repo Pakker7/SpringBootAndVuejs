@@ -1,4 +1,4 @@
-package com.test.psk.board.board;
+package com.test.psk.demo.board;
 
 import java.util.List;
 
