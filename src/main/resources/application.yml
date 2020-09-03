@@ -1,7 +1,0 @@
-# database 설정
-spring:
-  datasource:
-    url: jdbc:mariadb://192.168.195.128:3306/board
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: test
-    password: test

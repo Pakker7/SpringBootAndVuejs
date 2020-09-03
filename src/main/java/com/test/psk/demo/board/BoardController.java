@@ -1,6 +1,5 @@
 package com.test.psk.demo.board;
 
-import com.test.psk.demo.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,11 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class BoardController {
 
     @Autowired
-    private BoardService boardService;
+    //private BoardService boardService;
+    private  BoardDAO boardDAO;
 
     @GetMapping("/api/selectList")
-    public String tddddst() {
-        return boardService.selectList(new ParamBoardVO());
+    public String api() {
+        //return boardService.selectList(new ParamBoardVO()).toString();
+        return boardDAO.selectList().toString();
     }
 
 }
