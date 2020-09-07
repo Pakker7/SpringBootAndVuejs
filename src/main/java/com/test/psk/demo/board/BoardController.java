@@ -4,17 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.test.psk.demo.common.Global.Return.resultJson;
+
 @RestController
 public class BoardController {
 
     @Autowired
-    //private BoardService boardService;
-    private  BoardDAO boardDAO;
+    private BoardService boardService;
 
     @GetMapping("/api/selectList")
     public String api() {
-        //return boardService.selectList(new ParamBoardVO()).toString();
-        return boardDAO.selectList().toString();
+        return resultJson(boardService.selectList(new ParamBoardVO()));
     }
 
 }
