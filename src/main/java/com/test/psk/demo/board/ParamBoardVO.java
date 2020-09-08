@@ -12,9 +12,10 @@ import java.util.Date;
 @ToString
 @NoArgsConstructor
 public class ParamBoardVO {
-    private int NO;
-    private String TITLE;
-    private String CONTENTS;
-    private String WRITER;
-    private Date DATE;
+    private int no;
+    private String title;
+    private String contents;
+    private String writer;
+    private Date createDate;
+    private Date updateDate;
 }
