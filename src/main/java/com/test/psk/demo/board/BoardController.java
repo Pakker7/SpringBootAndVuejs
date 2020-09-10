@@ -1,15 +1,15 @@
 package com.test.psk.demo.board;
 
-import com.test.psk.demo.common.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 import static com.test.psk.demo.common.Global.Return.resultJson;
 
 @RestController
 public class BoardController {
+//TODO 롬북이 왜 안되는지.. 적용하기
+//TODO @RequetBody 없어도 작동하게끔 적용하기
+//TODO Dao interface Mapper로 적용하기
 
     @Autowired
     private BoardService boardService;

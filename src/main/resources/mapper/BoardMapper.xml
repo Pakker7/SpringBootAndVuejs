@@ -48,7 +48,6 @@
             TITLE           = #{title}
             , CONTENTS      = #{contents}
             , WRITER        = #{writer}
-            , CREATE_DATE   = NOW()
             , UPDATE_DATE   = NOW()
         WHERE NO            = #{no}
     </update>
