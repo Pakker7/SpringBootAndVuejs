@@ -13,7 +13,7 @@
         ORDER BY CREATE_DATE DESC
     </select>
 
-    <insert id="insert">
+    <insert id="create">
         INSERT INTO BOARD (
         TITLE
         , CONTENTS

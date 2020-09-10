@@ -18,6 +18,10 @@ public class BoardDAO {
         return sqlSession.selectList(NAMESPACE + "selectList");
     }
 
+    public BoardVO get(ParamBoardVO param){
+        return sqlSession.selectOne(NAMESPACE + "get", param);
+    }
+
     int create(ParamBoardVO param){
         return sqlSession.insert(NAMESPACE + "create", param);
     }

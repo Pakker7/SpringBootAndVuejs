@@ -16,6 +16,11 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public BoardVO get(ParamBoardVO param) {
+        return boardDAO.get(param);
+    }
+
+    @Override
     public int create(ParamBoardVO param) {
         return boardDAO.create(param);
     }

@@ -3,29 +3,42 @@
 
 <mapper namespace="com.test.psk.demo.board">
     <select id="selectList" resultType="com.test.psk.demo.board.BoardVO">
-        SELECT  NO
-                , TITLE
-                , CONTENTS
-                , WRITER
-                , CREATE_DATE
-                , UPDATE_DATE
+        SELECT
+            NO
+            , TITLE
+            , CONTENTS
+            , WRITER
+            , CREATE_DATE
+            , UPDATE_DATE
         FROM BOARD
         ORDER BY CREATE_DATE DESC
     </select>
 
-    <insert id="insert">
+    <select id="get" resultType="com.test.psk.demo.board.BoardVO">
+        SELECT
+            NO
+            , TITLE
+            , CONTENTS
+            , WRITER
+            , CREATE_DATE
+            , UPDATE_DATE
+        FROM BOARD
+        WHERE NO = #{no}
+    </select>
+
+    <insert id="create">
         INSERT INTO BOARD (
-        TITLE
-        , CONTENTS
-        , WRITER
-        , CREATE_DATE
-        , UPDATE_DATE
+            TITLE
+            , CONTENTS
+            , WRITER
+            , CREATE_DATE
+            , UPDATE_DATE
         ) VALUES (
-        #{title}
-        , #{contents}
-        , #{writer}
-        , NOW()
-        , NOW()
+            #{title}
+            , #{contents}
+            , #{writer}
+            , NOW()
+            , NOW()
         )
     </insert>
 
