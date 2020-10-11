@@ -1,18 +1,27 @@
 package com.test.psk.demo.board;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import static com.test.psk.demo.common.Global.Return.resultJson;
 
 @RestController
+@AllArgsConstructor
 public class BoardController {
-//TODO 롬북이 왜 안되는지.. 적용하기..
-//TODO post는 @RequetBody 있어야만 작동하는데.. 이거없어도 작동 하게 하기
-//TODO Dao interface Mapper로 적용하기
+//TODO post는 @RequetBody 있어야만 작동하는데.. 이거없어도 작동 하는건가?
+//TODO Dao interface Mapper로 적용하기 -> jpa 로 적용
 
     @Autowired
     private BoardService boardService;
+
+    private BoardRepository boardRepository; //생성자로 Bean 객체를 받도록 하면 @Autowired와 동일한 효과를 볼 수 있다 --> ..??
+                                                // 원래 @Autowired는 비권장방식이라고함..;;
+
+    @PostMapping("/api/test/jpa/dbInsert")
+    public void jpaInsert(@RequestBody BoardRequestDto dto){
+        boardRepository.save(dto.toEntity());
+    }
 
     @GetMapping("/api/selectList")
     public String selectList() {

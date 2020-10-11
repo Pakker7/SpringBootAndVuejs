@@ -9,63 +9,45 @@
         , WRITER
         , CREATE_DATE
         , UPDATE_DATE
-        SELECT
-        NO
-        , TITLE
-        , CONTENTS
-        , WRITER
-        , CREATE_DATE
-        , UPDATE_DATE
         FROM BOARD
         ORDER BY CREATE_DATE DESC
     </select>
 
     <select id="get" resultType="com.test.psk.demo.board.BoardVO">
-        SELECT
-        NO
-        , TITLE
-        , CONTENTS
-        , WRITER
-        , CREATE_DATE
-        , UPDATE_DATE
+        SELECT  NO
+                , TITLE
+                , CONTENTS
+                , WRITER
+                 CREATE_DATE
+                , UPDATE_DATE
         FROM BOARD
         WHERE NO = #{no}
     </select>
 
     <insert id="create">
         INSERT INTO BOARD (
-        TITLE
-        , CONTENTS
-        , WRITER
-        , CREATE_DATE
-        , UPDATE_DATE
-        TITLE
-        , CONTENTS
-        , WRITER
-        , CREATE_DATE
-        , UPDATE_DATE
+            TITLE
+            , CONTENTS
+            , WRITER
+            , CREATE_DATE
+            , UPDATE_DATE
         ) VALUES (
-        #{title}
-        , #{contents}
-        , #{writer}
-        , NOW()
-        , NOW()
-        #{title}
-        , #{contents}
-        , #{writer}
-        , NOW()
-        , NOW()
+            #{title}
+            , #{contents}
+            , #{writer}
+            , NOW()
+            , NOW()
         )
     </insert>
 
     <update id="update">
         UPDATE BOARD
         SET
-        TITLE           = #{title}
-        , CONTENTS      = #{contents}
-        , WRITER        = #{writer}
-        , CREATE_DATE   = NOW()
-        , UPDATE_DATE   = NOW()
+            TITLE           = #{title}
+            , CONTENTS      = #{contents}
+            , WRITER        = #{writer}
+            , CREATE_DATE   = NOW()
+            , UPDATE_DATE   = NOW()
         WHERE NO            = #{no}
     </update>
 
