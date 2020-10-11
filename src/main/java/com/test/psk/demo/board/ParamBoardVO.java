@@ -10,7 +10,6 @@ public class ParamBoardVO {
     private String writer;
     private Date createDate;
     private Date updateDate;
-
     public int getNo() {
         return no;
     }
@@ -58,5 +57,4 @@ public class ParamBoardVO {
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
     }
-
 }

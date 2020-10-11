@@ -7,8 +7,8 @@ import static com.test.psk.demo.common.Global.Return.resultJson;
 
 @RestController
 public class BoardController {
-//TODO 롬북이 왜 안되는지.. 적용하기
-//TODO @RequetBody 없어도 작동하게끔 적용하기
+//TODO 롬북이 왜 안되는지.. 적용하기..
+//TODO post는 @RequetBody 있어야만 작동하는데.. 이거없어도 작동 하게 하기
 //TODO Dao interface Mapper로 적용하기
 
     @Autowired
