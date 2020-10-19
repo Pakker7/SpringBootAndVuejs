@@ -1,4 +1,4 @@
-package com.test.psk.demo.board;
+package com.test.psk.demo.web.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

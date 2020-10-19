@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
 
 <mapper namespace="com.test.psk.demo.board">
-    <select id="selectList" resultType="com.test.psk.demo.board.BoardVO">
+    <select id="selectList" resultType="com.test.psk.demo.web.board.BoardVO">
         SELECT  NO
                 , TITLE
                 , CONTENTS
@@ -13,7 +13,7 @@
         ORDER BY CREATE_DATE DESC
     </select>
 
-    <select id="get" resultType="com.test.psk.demo.board.BoardVO">
+    <select id="get" resultType="com.test.psk.demo.web.board.BoardVO">
         SELECT  NO
                 , TITLE
                 , CONTENTS

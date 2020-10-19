@@ -1,10 +1,9 @@
-package com.test.psk.demo.board;
+package com.test.psk.demo.web.board;
 
+import com.test.psk.demo.web.common.Global;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import static com.test.psk.demo.common.Global.Return.resultJson;
 
 @RestController
 @AllArgsConstructor
@@ -25,27 +24,27 @@ public class BoardController {
 
     @GetMapping("/api/selectList")
     public String selectList() {
-        return resultJson(boardService.selectList(new ParamBoardVO()));
+        return Global.Return.resultJson(boardService.selectList(new ParamBoardVO()));
     }
 
     @GetMapping("/api/get")
     public String get(ParamBoardVO param) {
-        return resultJson(boardService.get(param));
+        return Global.Return.resultJson(boardService.get(param));
     }
 
     @PostMapping("/api/create")
     public String create(@RequestBody ParamBoardVO param) {
-        return resultJson(boardService.create(param));
+        return Global.Return.resultJson(boardService.create(param));
     }
 
     @PostMapping("/api/update")
     public String update(@RequestBody ParamBoardVO param) {
-        return resultJson(boardService.update(param));
+        return Global.Return.resultJson(boardService.update(param));
     }
 
     @PostMapping("/api/delete")
     public String delete(@RequestBody ParamBoardVO param) {
-        return resultJson(boardService.delete(param));
+        return Global.Return.resultJson(boardService.delete(param));
     }
 
 }

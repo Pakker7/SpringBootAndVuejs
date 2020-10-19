@@ -1,7 +1,7 @@
 package com.test.psk.demo;
 
-import com.test.psk.demo.board.BoardRepository;
-import com.test.psk.demo.board.BoardVO;
+import com.test.psk.demo.web.board.BoardRepository;
+import com.test.psk.demo.web.board.BoardVO;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

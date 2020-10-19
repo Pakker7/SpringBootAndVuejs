@@ -1,4 +1,4 @@
-package com.test.psk.demo.board;
+package com.test.psk.demo.web.board;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ public class BoardDAO {
     @Autowired
     private SqlSession sqlSession;
 
-    private final String NAMESPACE = "com.test.psk.demo.board.";
+    private final String NAMESPACE = "com.test.psk.demo.web.board.";
 
     public List<BoardVO> selectList(){
         return sqlSession.selectList(NAMESPACE + "selectList");

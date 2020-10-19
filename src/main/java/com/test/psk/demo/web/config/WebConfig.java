@@ -1,4 +1,4 @@
-package com.test.psk.demo.config;
+package com.test.psk.demo.web.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

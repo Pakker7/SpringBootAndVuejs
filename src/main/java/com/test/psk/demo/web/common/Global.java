@@ -1,4 +1,4 @@
-package com.test.psk.demo.common;
+package com.test.psk.demo.web.common;
 
 import com.google.gson.Gson;
 

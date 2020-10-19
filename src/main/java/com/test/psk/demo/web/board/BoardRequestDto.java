@@ -1,12 +1,10 @@
-package com.test.psk.demo.board;
+package com.test.psk.demo.web.board;
 
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Getter
 @Setter //setter가 있는 이유 : Controller에서 @RequestBody로 외부에서 데이터를 받는 경우엔 기본생성자 + set메소드를 통해서만 값이 할당됨
