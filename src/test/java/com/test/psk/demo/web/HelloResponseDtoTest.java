@@ -1,13 +1,9 @@
 package com.test.psk.demo.web;
 
-import com.test.psk.demo.web.board.HelloResponseDto;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import com.test.psk.demo.web.board.old.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
-
 
 public class HelloResponseDtoTest {
 

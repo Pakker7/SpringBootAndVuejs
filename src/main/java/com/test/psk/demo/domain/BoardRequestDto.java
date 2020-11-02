@@ -1,4 +1,4 @@
-package com.test.psk.demo.web.board;
+package com.test.psk.demo.domain;
 
 
 import lombok.Builder;
@@ -22,11 +22,19 @@ public class BoardRequestDto {
     private String writer;
 
     @Builder
-    public BoardVO toEntity(){
-        return BoardVO.builder()
+    public BoardRequestDto(String title, String contents, String writer) {
+        this.title = title;
+        this.contents = contents;
+        this.writer = writer;
+    }
+
+    public Board toEntity(){
+        return Board.builder()
                 .title(title)
                 .contents(contents)
                 .writer(writer)
                 .build();
     }
+
+
 }

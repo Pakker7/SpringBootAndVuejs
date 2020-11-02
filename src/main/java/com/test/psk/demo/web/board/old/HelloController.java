@@ -1,4 +1,4 @@
-package com.test.psk.demo.web.board;
+package com.test.psk.demo.web.board.old;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

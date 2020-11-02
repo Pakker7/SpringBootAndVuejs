@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest // jpa는 안됨
 public class HelloControllerTest {
 
     @Autowired

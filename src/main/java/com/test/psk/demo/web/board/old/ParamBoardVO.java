@@ -1,4 +1,4 @@
-package com.test.psk.demo.web.board;
+package com.test.psk.demo.web.board.old;
 
 import lombok.Getter;
 import lombok.Setter;

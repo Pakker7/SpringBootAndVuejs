@@ -1,22 +1,23 @@
-package com.test.psk.demo.web.board;
+package com.test.psk.demo.web.board.old;
 
+import com.test.psk.demo.domain.Board;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BoardServiceImpl implements BoardService {
+public class BoardServiceOldImpl implements BoardServiceOld {
 
     @Autowired
     private BoardDAO boardDAO;
 
     @Override
-    public List<BoardVO> selectList(ParamBoardVO param) {
+    public List<Board> selectList(ParamBoardVO param) {
         return boardDAO.selectList();
     }
 
     @Override
-    public BoardVO get(ParamBoardVO param) {
+    public Board get(ParamBoardVO param) {
         return boardDAO.get(param);
     }
 
