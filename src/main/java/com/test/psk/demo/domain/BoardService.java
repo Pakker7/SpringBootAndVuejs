@@ -16,15 +16,15 @@ public class BoardService {
     }
 
     @Transactional
-    public Long update(Long id, BoardUpdateRequestDto requestDto){
-        Board board = boardRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id="+ id));
+    public Long update(Long no, BoardUpdateRequestDto requestDto){
+        Board board = boardRepository.findById(no).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id="+ no));
         board.update(requestDto.getTitle(), requestDto.getContents());
 
-        return id;
+        return no;
     }
 
-    public BoardResponseDto findById(Long id){
-        Board entity = boardRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id="+ id));
+    public BoardResponseDto findById(Long no){
+        Board entity = boardRepository.findById(no).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. no="+ no));
         return new BoardResponseDto(entity);
     }
 }

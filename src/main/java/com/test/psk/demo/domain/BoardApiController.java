@@ -21,12 +21,12 @@ public class BoardApiController {
     }
 
     @PutMapping("/api/board/{id}")
-    public Long update(@PathVariable Long id, @RequestBody BoardUpdateRequestDto boardRequestDto){
-        return boardService.update(id,boardRequestDto);
+    public Long update(@PathVariable Long no, @RequestBody BoardUpdateRequestDto boardRequestDto){
+        return boardService.update(no,boardRequestDto);
     }
 
-    @GetMapping("/api/board/{id}")
-    public BoardResponseDto findById (@PathVariable Long id, @RequestBody BoardRequestDto boardRequestDto){
-        return boardService.findById(id);
+    @GetMapping("/api/board/{no}")
+    public BoardResponseDto findById (@PathVariable Long no){
+        return boardService.findById(no);
     }
 }
