@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "BOARD")
-public class Board {//Entity 클래스(DB 테이블과 매칭될 클래스)
+public class Board extends BaseTimeEntity{//Entity 클래스(DB 테이블과 매칭될 클래스)
     // 언더 스코어 네이밍(_) 으로 이름을 매칭
     // ex) SalesManager.java -> sales_manager table
 
@@ -29,6 +29,7 @@ public class Board {//Entity 클래스(DB 테이블과 매칭될 클래스)
     private String contents;
     @Column
     private String writer;
+
 
     @Builder // 해당 클래스의 빌더패턴 클래스 생성, 생성자 상단에 선언하면 생성자에 포함된 빌드만 빌더에 포함
     public Board(String title, String contents, String writer) {
