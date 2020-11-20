@@ -1,7 +1,11 @@
 package com.test.psk.demo.domain;
 
+import com.test.psk.demo.web.common.Global;
+import com.test.psk.demo.web.common.annotation.Get;
+import com.test.psk.demo.web.common.annotation.Post;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -15,18 +19,23 @@ public class BoardApiController {
 //        boardRepository.save(dto.toEntity());
 //    }
 
-    @PostMapping("/api/save")
-    public Long save(@RequestBody BoardRequestDto requestDto){
-        return boardService.save(requestDto);
+    @Post("/api/save")
+    public String save(@RequestBody BoardRequestDto requestDto){
+        return Global.Return.resultJson(boardService.save(requestDto));
+    }
+
+    @Get("/api/selectList")
+    public String selectList(@RequestBody BoardRequestDto requestDto){
+        return Global.Return.resultJson(boardService.findAllDesc());
     }
 
     @PutMapping("/api/board/{id}")
-    public Long update(@PathVariable Long no, @RequestBody BoardUpdateRequestDto boardRequestDto){
-        return boardService.update(no,boardRequestDto);
+    public String update(@PathVariable Long no, @RequestBody BoardUpdateRequestDto boardRequestDto){
+        return Global.Return.resultJson(boardService.update(no,boardRequestDto));
     }
 
-    @GetMapping("/api/board/{no}")
-    public BoardResponseDto findById (@PathVariable Long no){
-        return boardService.findById(no);
+    @Get("/api/board/{no}")
+    public String findById (@PathVariable Long no){
+        return Global.Return.resultJson(boardService.findById(no));
     }
 }

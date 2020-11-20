@@ -14,29 +14,29 @@ public class BoardController {
     @Autowired
     private BoardServiceOld boardServiceOld;
 
-    @GetMapping("/api/selectList")
-    public String selectList() {
-        return Global.Return.resultJson(boardServiceOld.selectList(new ParamBoardVO()));
-    }
-
-    @GetMapping("/api/get")
-    public String get(ParamBoardVO param) {
-        return Global.Return.resultJson(boardServiceOld.get(param));
-    }
-
-    @PostMapping("/api/create")
-    public String create(@RequestBody ParamBoardVO param) {
-        return Global.Return.resultJson(boardServiceOld.create(param));
-    }
-
-    @PostMapping("/api/update")
-    public String update(@RequestBody ParamBoardVO param) {
-        return Global.Return.resultJson(boardServiceOld.update(param));
-    }
-
-    @PostMapping("/api/delete")
-    public String delete(@RequestBody ParamBoardVO param) {
-        return Global.Return.resultJson(boardServiceOld.delete(param));
-    }
+//    @GetMapping("/api/selectList")
+//    public String selectList() {
+//        return Global.Return.resultJson(boardServiceOld.selectList(new ParamBoardVO()));
+//    }
+//
+//    @GetMapping("/api/get")
+//    public String get(ParamBoardVO param) {
+//        return Global.Return.resultJson(boardServiceOld.get(param));
+//    }
+//
+//    @PostMapping("/api/create")
+//    public String create(@RequestBody ParamBoardVO param) {
+//        return Global.Return.resultJson(boardServiceOld.create(param));
+//    }
+//
+//    @PostMapping("/api/update")
+//    public String update(@RequestBody ParamBoardVO param) {
+//        return Global.Return.resultJson(boardServiceOld.update(param));
+//    }
+//
+//    @PostMapping("/api/delete")
+//    public String delete(@RequestBody ParamBoardVO param) {
+//        return Global.Return.resultJson(boardServiceOld.delete(param));
+//    }
 
 }
