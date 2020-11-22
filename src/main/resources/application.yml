@@ -17,4 +17,4 @@ spring:
 mybatis:
   mapper-locations: mapper/**/*.xml
   config-location: classpath:config/mybatis-configuration.xml
-  type-aliases-package: com.test.psk.demo.web.mapper
+  type-aliases-package: com.test.psk.demo.web.board.old

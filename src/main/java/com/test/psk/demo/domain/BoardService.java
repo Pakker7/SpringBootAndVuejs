@@ -17,19 +17,19 @@ public class BoardService {
         return boardRepository.save(requestDto.toEntity()).getNo();
     }
 
+    @Transactional(readOnly = true) // 트랜잭션 범위는 유지하되 조회 기능만 남겨두어 조회 속도가 개선되게끔 함
+    public List<BoardListResponseDto> findAllDesc(){
+        return boardRepository.findAllDesc().stream()
+                .map(BoardListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
     @Transactional
     public Long update(Long no, BoardUpdateRequestDto requestDto){
         Board board = boardRepository.findById(no).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. id="+ no));
         board.update(requestDto.getTitle(), requestDto.getContents());
 
         return no;
-    }
-
-    @Transactional(readOnly = true) // 트랜잭션 범위는 유지하되 조회 기능만 남겨두어 조회 속도가 개선되게끔 함
-    public List<BoardListResponseDto> findAllDesc(){
-        return boardRepository.findAllDesc().stream()
-                .map(BoardListResponseDto::new) //TODO 여기가 안되서 해결해야함
-                .collect(Collectors.toList());
     }
 
     public BoardResponseDto findById(Long no){

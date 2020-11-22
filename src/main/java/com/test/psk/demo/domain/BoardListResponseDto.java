@@ -1,11 +1,9 @@
 package com.test.psk.demo.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
+@Setter
 @ToString
 @NoArgsConstructor
 public class BoardListResponseDto {
@@ -14,6 +12,14 @@ public class BoardListResponseDto {
     private String title;
     private String contents;
     private String writer;
+
+
+    public BoardListResponseDto(Board entity){
+        this.no = entity.getNo();
+        this.title = entity.getTitle();
+        this.contents = entity.getContents();
+        this.writer = entity.getWriter();
+    }
 
     @Builder
     public BoardListResponseDto(Long no, String title, String contents, String writer) {

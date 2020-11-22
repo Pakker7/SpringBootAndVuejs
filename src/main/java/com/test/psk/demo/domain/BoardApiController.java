@@ -25,11 +25,11 @@ public class BoardApiController {
     }
 
     @Get("/api/selectList")
-    public String selectList(@RequestBody BoardRequestDto requestDto){
+    public String selectList(){
         return Global.Return.resultJson(boardService.findAllDesc());
     }
 
-    @PutMapping("/api/board/{id}")
+    @PutMapping("/api/board/{no}")
     public String update(@PathVariable Long no, @RequestBody BoardUpdateRequestDto boardRequestDto){
         return Global.Return.resultJson(boardService.update(no,boardRequestDto));
     }
