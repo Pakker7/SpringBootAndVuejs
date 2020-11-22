@@ -13,7 +13,7 @@ public class BoardDAO {
     @Autowired
     private SqlSession sqlSession;
 
-    private final String NAMESPACE = "com.test.psk.demo.web.board.";
+    private final String NAMESPACE = "com.test.psk.demo.web.board.old.";
 
     public List<Board> selectList(){
         return sqlSession.selectList(NAMESPACE + "selectList");
