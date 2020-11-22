@@ -38,4 +38,9 @@ public class BoardApiController {
     public String findById (@PathVariable Long no){
         return Global.Return.resultJson(boardService.findById(no));
     }
+
+    @DeleteMapping("/api/board/{no}")
+    public String delete (@PathVariable Long no){
+        return Global.Return.resultJson(boardService.delete(no));
+    }
 }

@@ -32,8 +32,17 @@ public class BoardService {
         return no;
     }
 
+    @Transactional(readOnly = true)
     public BoardResponseDto findById(Long no){
         Board entity = boardRepository.findById(no).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. no="+ no));
         return new BoardResponseDto(entity);
+    }
+
+    @Transactional
+    public boolean delete(Long no){
+        Board entity = boardRepository.findById(no).orElseThrow(()-> new IllegalArgumentException("해당 게시글이 없습니다. no="+ no));
+        boardRepository.delete(entity);
+        //boardRepository.deleteById(entity.getNo()); 이렇게도 가능함
+        return true;
     }
 }
