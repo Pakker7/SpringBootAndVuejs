@@ -3,6 +3,8 @@ server:
   port: 9000
 
 spring:
+  profiles:
+    include: oauth
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://192.168.195.128:3306/board

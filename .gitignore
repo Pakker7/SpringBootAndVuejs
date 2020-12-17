@@ -269,3 +269,6 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse,gradle,git
+
+#oauth 정보가 github에 올라가는 것을 막기 위해 추가
+application-oauth.yml
