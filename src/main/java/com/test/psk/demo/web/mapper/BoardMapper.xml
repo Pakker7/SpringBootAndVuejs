@@ -4,11 +4,11 @@
 <mapper namespace="com.test.psk.demo.board">
     <select id="selectList" resultType="com.test.psk.demo.domain.Board">
         SELECT  NO
-                , TITLE
-                , CONTENTS
-                , WRITER
-                , CREATE_DATE
-                , UPDATE_DATE
+        , TITLE
+        , CONTENTS
+        , WRITER
+        , CREATE_DATE
+        , UPDATE_DATE
         FROM BOARD
         ORDER BY CREATE_DATE DESC
     </select>
@@ -18,7 +18,7 @@
                 , TITLE
                 , CONTENTS
                 , WRITER
-                , CREATE_DATE
+                 CREATE_DATE
                 , UPDATE_DATE
         FROM BOARD
         WHERE NO = #{no}
@@ -43,11 +43,11 @@
     <update id="update">
         UPDATE BOARD
         SET
-        TITLE           = #{title}
-        , CONTENTS      = #{contents}
-        , WRITER        = #{writer}
-        , CREATE_DATE   = NOW()
-        , UPDATE_DATE   = NOW()
+            TITLE           = #{title}
+            , CONTENTS      = #{contents}
+            , WRITER        = #{writer}
+            , CREATE_DATE   = NOW()
+            , UPDATE_DATE   = NOW()
         WHERE NO            = #{no}
     </update>
 

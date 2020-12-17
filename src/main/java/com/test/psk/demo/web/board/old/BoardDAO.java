@@ -1,5 +1,6 @@
-package com.test.psk.demo.board;
+package com.test.psk.demo.web.board.old;
 
+import com.test.psk.demo.domain.Board;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,13 +13,13 @@ public class BoardDAO {
     @Autowired
     private SqlSession sqlSession;
 
-    private final String NAMESPACE = "com.test.psk.demo.board.";
+    private final String NAMESPACE = "com.test.psk.demo.web.board.old.";
 
-    public List<BoardVO> selectList(){
+    public List<Board> selectList(){
         return sqlSession.selectList(NAMESPACE + "selectList");
     }
 
-    public BoardVO get(ParamBoardVO param){
+    public Board get(ParamBoardVO param){
         return sqlSession.selectOne(NAMESPACE + "get", param);
     }
 

@@ -1,0 +1,20 @@
+
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.195.128:3306/board
+    username: test
+    password: test
+  jpa:
+    hibernate:
+      dialect : org.hibernate.dialect.MySQL5InnoDBDialect
+      naming:
+        physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+mybatis:
+  mapper-locations: mapper/**/*.xml
+  config-location: classpath:config/mybatis-configuration.xml
+  type-aliases-package: com.test.psk.demo.web.board.old
