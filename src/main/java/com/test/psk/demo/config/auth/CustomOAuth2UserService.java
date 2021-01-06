@@ -1,6 +1,8 @@
 package com.test.psk.demo.config.auth;
 
 
+import com.test.psk.demo.config.auth.dto.OAuthAttributes;
+import com.test.psk.demo.config.auth.dto.SessionUser;
 import com.test.psk.demo.domain.user.User;
 import com.test.psk.demo.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -38,14 +40,14 @@ public class CustomOAuth2UserService implements OAuth2UserService {
                 .getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
-        // OAuth2UserService를 통해 가져온 OAuth2User 의 attrivute를 담을 클래스
-        // 이후 네이버 등다른 소셜 로그인도 이 클래스를 사용할 것임
+        // OAuth2UserService를 통해 가져온 OAuth2User 의 attribute를 담을 클래스
+        // 이후 네이버 등 다른 소셜 로그인도 이 클래스를 사용할 것임
 
         User user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user));  // 세션에 사용자 정보를 저장하기 위한 Dto클래스
 
         return new DefaultOAuth2User(
-                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())), // ????
                 attributes.getAttributes(),
                 attributes.getNameAttributeKey());
     }
@@ -53,8 +55,8 @@ public class CustomOAuth2UserService implements OAuth2UserService {
 
     private User saveOrUpdate(OAuthAttributes attributes) {
         User user = userRepository.findByEmail(attributes.getEmail())
-                .map(entity->entity.update(attributes.getName(), attributes.getPicture()))
-                .orElse(attributes.toEntity());
+                .map(entity->entity.update(attributes.getName(), attributes.getPicture())) // ???? entity.update? 조건이뭐지...
+                .orElse(attributes.toEntity()); // orElse -> 객체가 null일 경우에 실행(Optional)
 
         return userRepository.save(user);
     }
