@@ -10,3 +10,9 @@
   - AWS(예정)
 - 기능
   - 간단한 CRUD
+
+## 실행 방법
+- 뷰
+```
+F:\Spring\SpringBootAndVuejs\src\frontend> npm run serve
+```

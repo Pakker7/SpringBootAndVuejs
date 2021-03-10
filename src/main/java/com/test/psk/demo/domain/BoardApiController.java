@@ -20,7 +20,7 @@ public class BoardApiController {
 //    }
 
     @Post("/api/save")
-    public String save(@RequestBody BoardRequestDto requestDto){
+    public String save(@RequestBody BoardRequestDto requestDto) {
         return Global.Return.resultJson(boardService.save(requestDto));
     }
 

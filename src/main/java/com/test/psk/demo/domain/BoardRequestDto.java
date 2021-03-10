@@ -28,13 +28,12 @@ public class BoardRequestDto {
         this.writer = writer;
     }
 
-    public Board toEntity(){
+    public Board toEntity() {
         return Board.builder()
                 .title(title)
                 .contents(contents)
                 .writer(writer)
                 .build();
     }
-
 
 }
