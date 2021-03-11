@@ -4,12 +4,16 @@
   * 프론트 엔드는 https://github.com/Pakker7/frontend 에서 확인 가능 합니다.
 
 - 적용 기술
-  - JPA
+  - JPA를 사용한 crud
   - Spring security
-  - oauth login
+  - oauth login(google, naver)
   - AWS(예정)
-- 기능
-  - 간단한 CRUD
+
+## 경로
+```
+src/frontend -> vue.js
+src/main -> sprintboot
+```
 
 ## 실행 방법
 - 뷰
