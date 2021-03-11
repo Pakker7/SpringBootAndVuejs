@@ -41,7 +41,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.3.4.RELEASE'
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
-    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    runtimeOnly 'com.h2database:h2'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

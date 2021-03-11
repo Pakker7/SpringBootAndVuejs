@@ -6,16 +6,21 @@ spring:
   profiles:
     include: oauth
   datasource:
-    driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.195.128:3306/board
-    username: test
-    password: test
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:tcp://localhost/~/test;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    platform: h2
   jpa:
     hibernate:
       dialect : org.hibernate.dialect.MySQL5InnoDBDialect
       naming:
         physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
   session:
     store-type: jdbc
 mybatis:
