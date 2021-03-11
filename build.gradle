@@ -40,7 +40,7 @@ dependencies {
     compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.6.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.3.4.RELEASE'
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
-
+    compile('org.springframework.session:spring-session-jdbc')
     testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
